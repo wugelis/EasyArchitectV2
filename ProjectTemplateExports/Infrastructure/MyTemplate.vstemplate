@@ -1,0 +1,33 @@
+<VSTemplate Version="3.0.0" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005" Type="Project">
+  <TemplateData>
+    <Name>Infrastructure</Name>
+    <Description>這是建構 API Framework V2 所需要的 基礎建設 Infrastructure 所需要的相關程式碼 與 套件參考。</Description>
+    <ProjectType>CSharp</ProjectType>
+    <ProjectSubType>
+    </ProjectSubType>
+    <SortOrder>1000</SortOrder>
+    <CreateNewFolder>true</CreateNewFolder>
+    <DefaultName>Infrastructure</DefaultName>
+    <ProvideDefaultName>true</ProvideDefaultName>
+    <LocationField>Enabled</LocationField>
+    <EnableLocationBrowseButton>true</EnableLocationBrowseButton>
+    <CreateInPlace>true</CreateInPlace>
+    <Icon>__TemplateIcon.png</Icon>
+	<LanguageTag>csharp</LanguageTag>
+	<PlatformTag>Linux</PlatformTag>
+    <PlatformTag>windows</PlatformTag>
+    <ProjectTypeTag>library</ProjectTypeTag>
+	<ProjectTypeTag>Easy Architect V2</ProjectTypeTag>
+  </TemplateData>
+  <TemplateContent>
+    <Project TargetFileName="Infrastructure.csproj" File="Infrastructure.csproj" ReplaceParameters="true">
+      <Folder Name="Persistance" TargetFolderName="Persistance">
+        <Folder Name="Configurations" TargetFolderName="Configurations" />
+      </Folder>
+    </Project>
+  </TemplateContent>
+  <WizardExtension>
+	<Assembly>EasyArchitectV2VSIXProject, Version=1.0.0.0, Culture=neutral, PublicKeyToken=eb1735cb5a8490fa</Assembly>
+	<FullClassName>EasyArchitectV2VSIXProject.WizardImp.InfrastructureLayerWizard</FullClassName>
+  </WizardExtension>
+</VSTemplate>

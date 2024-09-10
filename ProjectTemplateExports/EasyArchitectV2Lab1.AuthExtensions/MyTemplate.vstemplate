@@ -1,0 +1,39 @@
+<VSTemplate Version="3.0.0" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005" Type="Project">
+  <TemplateData>
+    <Name>EasyArchitectV2Lab1.AuthExtensions</Name>
+    <Description>EasyArchitect V2 的使用者驗證與授權相關服務 (套件專案)</Description>
+    <ProjectType>CSharp</ProjectType>
+    <ProjectSubType>
+    </ProjectSubType>
+    <SortOrder>1000</SortOrder>
+    <CreateNewFolder>true</CreateNewFolder>
+    <DefaultName>EasyArchitectV2Lab1.AuthExtensions</DefaultName>
+    <ProvideDefaultName>true</ProvideDefaultName>
+    <LocationField>Enabled</LocationField>
+    <EnableLocationBrowseButton>true</EnableLocationBrowseButton>
+    <CreateInPlace>true</CreateInPlace>
+    <Icon>__TemplateIcon.png</Icon>
+	<LanguageTag>csharp</LanguageTag>
+	<PlatformTag>Linux</PlatformTag>
+    <PlatformTag>windows</PlatformTag>
+    <ProjectTypeTag>library</ProjectTypeTag>
+	<ProjectTypeTag>EasyArchitect V2 Packages</ProjectTypeTag>
+  </TemplateData>
+  <TemplateContent>
+    <Project TargetFileName="EasyArchitectV2Lab1.AuthExtensions.csproj" File="EasyArchitectV2Lab1.AuthExtensions.csproj" ReplaceParameters="true">
+      <Folder Name="Filters" TargetFolderName="Filters">
+        <ProjectItem ReplaceParameters="true" TargetFileName="NeedAuthorizeAttribute.cs">NeedAuthorizeAttribute.cs</ProjectItem>
+      </Folder>
+      <Folder Name="Models" TargetFolderName="Models">
+        <ProjectItem ReplaceParameters="true" TargetFileName="AuthenticateRequest.cs">AuthenticateRequest.cs</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="AuthenticateResponse.cs">AuthenticateResponse.cs</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="IAccountEnt.cs">IAccountEnt.cs</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="User.cs">User.cs</ProjectItem>
+      </Folder>
+      <Folder Name="Services" TargetFolderName="Services">
+        <ProjectItem ReplaceParameters="true" TargetFileName="IUserService.cs">IUserService.cs</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="UserService.cs">UserService.cs</ProjectItem>
+      </Folder>
+    </Project>
+  </TemplateContent>
+</VSTemplate>

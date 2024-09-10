@@ -1,0 +1,31 @@
+<VSTemplate Version="3.0.0" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005" Type="Project">
+  <TemplateData>
+    <Name>EasyArchitectV2Lab1.Configuration</Name>
+    <Description>EasyArchitect V2 設定檔專案 (套件專案)</Description>
+    <ProjectType>CSharp</ProjectType>
+    <ProjectSubType>
+    </ProjectSubType>
+    <SortOrder>1000</SortOrder>
+    <CreateNewFolder>true</CreateNewFolder>
+    <DefaultName>EasyArchitectV2Lab1.Configuration</DefaultName>
+    <ProvideDefaultName>true</ProvideDefaultName>
+    <LocationField>Enabled</LocationField>
+    <EnableLocationBrowseButton>true</EnableLocationBrowseButton>
+    <CreateInPlace>true</CreateInPlace>
+    <Icon>__TemplateIcon.png</Icon>
+	<LanguageTag>csharp</LanguageTag>
+	<PlatformTag>Linux</PlatformTag>
+    <PlatformTag>windows</PlatformTag>
+    <ProjectTypeTag>library</ProjectTypeTag>
+	<ProjectTypeTag>EasyArchitect V2 Packages</ProjectTypeTag>
+  </TemplateData>
+  <TemplateContent>
+    <Project TargetFileName="EasyArchitectV2Lab1.Configuration.csproj" File="EasyArchitectV2Lab1.Configuration.csproj" ReplaceParameters="true">
+      <ProjectItem ReplaceParameters="true" TargetFileName="AppSettings.cs">AppSettings.cs</ProjectItem>
+      <ProjectItem ReplaceParameters="true" TargetFileName="ConnectionString.cs">ConnectionString.cs</ProjectItem>
+      <ProjectItem ReplaceParameters="true" TargetFileName="Logging.cs">Logging.cs</ProjectItem>
+      <ProjectItem ReplaceParameters="true" TargetFileName="LogLevel.cs">LogLevel.cs</ProjectItem>
+      <ProjectItem ReplaceParameters="true" TargetFileName="RootObject.cs">RootObject.cs</ProjectItem>
+    </Project>
+  </TemplateContent>
+</VSTemplate>

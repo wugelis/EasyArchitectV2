@@ -1,0 +1,27 @@
+<VSTemplate Version="3.0.0" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005" Type="Project">
+  <TemplateData>
+    <Name>EasyArchitectV2Lab1.JWTMiddleware</Name>
+    <Description>EasyArchitect V2 的 Middleware 服務 (套件專案)</Description>
+    <ProjectType>CSharp</ProjectType>
+    <ProjectSubType>
+    </ProjectSubType>
+    <SortOrder>1000</SortOrder>
+    <CreateNewFolder>true</CreateNewFolder>
+    <DefaultName>EasyArchitectV2Lab1.JWTMiddleware</DefaultName>
+    <ProvideDefaultName>true</ProvideDefaultName>
+    <LocationField>Enabled</LocationField>
+    <EnableLocationBrowseButton>true</EnableLocationBrowseButton>
+    <CreateInPlace>true</CreateInPlace>
+    <Icon>__TemplateIcon.png</Icon>
+ 	<LanguageTag>csharp</LanguageTag>
+	<PlatformTag>Linux</PlatformTag>
+    <PlatformTag>windows</PlatformTag>
+    <ProjectTypeTag>library</ProjectTypeTag>
+	<ProjectTypeTag>EasyArchitect V2 Packages</ProjectTypeTag>
+ </TemplateData>
+  <TemplateContent>
+    <Project TargetFileName="EasyArchitectV2Lab1.JWTMiddleware.csproj" File="EasyArchitectV2Lab1.JWTMiddleware.csproj" ReplaceParameters="true">
+      <ProjectItem ReplaceParameters="true" TargetFileName="JwtService.cs">JwtService.cs</ProjectItem>
+    </Project>
+  </TemplateContent>
+</VSTemplate>

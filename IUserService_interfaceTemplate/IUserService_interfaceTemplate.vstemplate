@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<VSTemplate Version="3.0.0" Type="Item" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005" xmlns:sdk="http://schemas.microsoft.com/developer/vstemplate-sdkextension/2010">
+  <TemplateData>
+    <Name>IUserService_interfaceTemplate</Name>
+    <Description>IUserService_interfaceTemplate</Description>
+    <Icon>IUserService_interfaceTemplate.ico</Icon>
+    <TemplateID>d1686fc9-704d-4f7d-9811-b52bf9fb8234</TemplateID>
+    <TemplateGroupID>AspNetCore</TemplateGroupID>
+    <ProjectType>CSharp</ProjectType>
+    <ProjectSubType>Web</ProjectSubType>
+    <RequiredFrameworkVersion>2.0</RequiredFrameworkVersion>
+    <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
+    <DefaultName>IUserService.cs</DefaultName>
+  </TemplateData>
+  <TemplateContent>
+    <References>
+      <Reference>
+        <Assembly>System</Assembly>
+      </Reference>
+    </References>
+    <ProjectItem ReplaceParameters="true">IUserService.cs</ProjectItem>
+  </TemplateContent>
+</VSTemplate>

@@ -3,6 +3,13 @@
   <PropertyGroup>
     <MinimumVisualStudioVersion>17.0</MinimumVisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>EasyArchitectV2VSIXProject.snk</AssemblyOriginatorKeyFile>
   </PropertyGroup>
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
@@ -17,11 +24,11 @@
     <AssemblyName>EasyArchitectV2VSIXProject</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <GeneratePkgDefFile>false</GeneratePkgDefFile>
-    <IncludeAssemblyInVSIXContainer>false</IncludeAssemblyInVSIXContainer>
-    <IncludeDebugSymbolsInVSIXContainer>false</IncludeDebugSymbolsInVSIXContainer>
-    <IncludeDebugSymbolsInLocalVSIXDeployment>false</IncludeDebugSymbolsInLocalVSIXDeployment>
-    <CopyBuildOutputToOutputDirectory>false</CopyBuildOutputToOutputDirectory>
-    <CopyOutputSymbolsToOutputDirectory>false</CopyOutputSymbolsToOutputDirectory>
+    <IncludeAssemblyInVSIXContainer>true</IncludeAssemblyInVSIXContainer>
+    <IncludeDebugSymbolsInVSIXContainer>true</IncludeDebugSymbolsInVSIXContainer>
+    <IncludeDebugSymbolsInLocalVSIXDeployment>true</IncludeDebugSymbolsInLocalVSIXDeployment>
+    <CopyBuildOutputToOutputDirectory>true</CopyBuildOutputToOutputDirectory>
+    <CopyOutputSymbolsToOutputDirectory>true</CopyOutputSymbolsToOutputDirectory>
     <StartAction>Program</StartAction>
     <StartProgram Condition="'$(DevEnvDir)' != ''">$(DevEnvDir)devenv.exe</StartProgram>
     <StartArguments>/rootsuffix Exp</StartArguments>
@@ -44,19 +51,181 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="ClassesDef\ApplicationClassDef.cs" />
+    <Compile Include="ClassesDef\ClassDef.cs" />
+    <Compile Include="ClassesDef\CLASS_TYPE.cs" />
+    <Compile Include="ClassesDef\DbContextDef.cs" />
+    <Compile Include="ClassesDef\DomainClassDef.cs" />
+    <Compile Include="Common\ConnectionServices.cs" />
+    <Compile Include="Common\StringUtils.cs" />
+    <Compile Include="Common\Utils.cs" />
+    <Compile Include="Data\DAL.cs" />
+    <Compile Include="Data\DBConnect.cs" />
+    <Compile Include="Data\IRepository.cs" />
+    <Compile Include="Data\SchemaData.cs" />
+    <Compile Include="Data\SQLStore.cs" />
+    <Compile Include="Data\SQLStoreClass.cs" />
+    <Compile Include="Data\SQLStoreDataSet.cs">
+      <DependentUpon>SQLStoreDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Data\SQLStoreDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SQLStoreDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Data\SQLStoreDataSet1.Designer.cs" />
+    <Compile Include="Forms\connectionWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\connectionWindow.Designer.cs">
+      <DependentUpon>connectionWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmAddApplicationService.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmAddApplicationService.Designer.cs">
+      <DependentUpon>frmAddApplicationService.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmAddDomainLayer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmAddDomainLayer.Designer.cs">
+      <DependentUpon>frmAddDomainLayer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmAddProjectsRef.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmAddProjectsRef.Designer.cs">
+      <DependentUpon>frmAddProjectsRef.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmMyORMappingWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmMyORMappingWindow.Designer.cs">
+      <DependentUpon>frmMyORMappingWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\GlobalVar.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="WizardImp\ApplicationServiceWizard.cs" />
+    <Compile Include="WizardImp\DomainLayerWizard.cs" />
+    <Compile Include="WizardImp\InfrastructureLayerWizard.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="ProjectTemplates\Easy Architect V2\1033\Domain.zip">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <IncludeInVSIX>true</IncludeInVSIX>
+    </Content>
+    <Content Include="ProjectTemplates\Easy Architect V2\1033\Application.zip">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <IncludeInVSIX>true</IncludeInVSIX>
+    </Content>
+    <Content Include="ProjectTemplates\Easy Architect V2\1033\EasyArchitectV2.Web.zip">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <IncludeInVSIX>true</IncludeInVSIX>
+    </Content>
+    <None Include="Resources\ConcertTicket_ClassDiagram.png" />
+    <None Include="Resources\RentalCar_ClassDiagram.png" />
+    <None Include="Data\SQLStoreDataSet.xsc">
+      <DependentUpon>SQLStoreDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="Data\SQLStoreDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>SQLStoreDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Data\SQLStoreDataSet.xss">
+      <DependentUpon>SQLStoreDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="EasyArchitectV2VSIXProject.snk" />
+    <Content Include="ProjectTemplates\Easy Architect V2\1033\Infrastructure.zip">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <IncludeInVSIX>true</IncludeInVSIX>
+    </Content>
+    <Content Include="ItemTemplates\Web\EasyArchitect V2 Labs Items\IUserService_interfaceTemplate.zip">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <IncludeInVSIX>true</IncludeInVSIX>
+    </Content>
+    <Content Include="ItemTemplates\Web\EasyArchitect V2 Labs Items\UserService_ClassTemplate.zip">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <IncludeInVSIX>true</IncludeInVSIX>
+    </Content>
+    <Content Include="ProjectTemplates\EasyArchitect V2 Packages\1033\EasyArchitectV2Lab1.Configuration.zip">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <IncludeInVSIX>true</IncludeInVSIX>
+    </Content>
+    <Content Include="ProjectTemplates\EasyArchitect V2 Packages\1033\EasyArchitectV2Lab1.ApiControllerBase.zip">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <IncludeInVSIX>true</IncludeInVSIX>
+    </Content>
+    <Content Include="ProjectTemplates\EasyArchitect V2 Packages\1033\EasyArchitectV2Lab1.AuthExtensions.zip">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <IncludeInVSIX>true</IncludeInVSIX>
+    </Content>
+    <Content Include="ProjectTemplates\EasyArchitect V2 Packages\1033\EasyArchitectV2Lab1.JWTMiddleware.zip">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <IncludeInVSIX>true</IncludeInVSIX>
+    </Content>
     <None Include="source.extension.vsixmanifest">
       <SubType>Designer</SubType>
     </None>
   </ItemGroup>
   <ItemGroup>
+    <PackageReference Include="Microsoft.Build">
+      <Version>16.7.0</Version>
+    </PackageReference>
     <PackageReference Include="Microsoft.VisualStudio.SDK" Version="17.0.32112.339" ExcludeAssets="runtime" />
     <PackageReference Include="Microsoft.VSSDK.BuildTools" Version="17.9.3174" />
   </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
-    <Folder Include="WizardImp\" />
+    <Reference Include="Microsoft.VisualStudio.TemplateWizardInterface, Version=17.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Forms\connectionWindow.resx">
+      <DependentUpon>connectionWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmAddApplicationService.resx">
+      <DependentUpon>frmAddApplicationService.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmAddDomainLayer.resx">
+      <DependentUpon>frmAddDomainLayer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmAddProjectsRef.resx">
+      <DependentUpon>frmAddProjectsRef.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmMyORMappingWindow.resx">
+      <DependentUpon>frmMyORMappingWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Clean Architecture_Infrastructuure.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Clean Architecture_Infrastructuure_02.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CreateEntitiesClassesWindowLogo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="icons8_engineering_40px.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <IncludeInVSIX>true</IncludeInVSIX>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="$(VSToolsPath)\VSSDK\Microsoft.VsSDK.targets" Condition="'$(VSToolsPath)' != ''" />

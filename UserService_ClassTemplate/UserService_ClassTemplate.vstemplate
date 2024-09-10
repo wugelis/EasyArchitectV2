@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<VSTemplate Version="3.0.0" Type="Item" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005" xmlns:sdk="http://schemas.microsoft.com/developer/vstemplate-sdkextension/2010">
+  <TemplateData>
+    <Name>UserService_ClassTemplate</Name>
+    <Description>UserService_ClassTemplate</Description>
+    <Icon>UserService_ClassTemplate.ico</Icon>
+    <TemplateID>ce6975bb-5746-497b-bf16-9a0bb55f6c19</TemplateID>
+    <TemplateGroupID>AspNetCore</TemplateGroupID>
+    <ProjectType>CSharp</ProjectType>
+    <ProjectSubType>Web</ProjectSubType>
+    <RequiredFrameworkVersion>2.0</RequiredFrameworkVersion>
+    <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
+    <DefaultName>UserService.cs</DefaultName>
+  </TemplateData>
+  <TemplateContent>
+    <References>
+      <Reference>
+        <Assembly>System</Assembly>
+      </Reference>
+    </References>
+    <ProjectItem ReplaceParameters="true">UserService.cs</ProjectItem>
+  </TemplateContent>
+</VSTemplate>

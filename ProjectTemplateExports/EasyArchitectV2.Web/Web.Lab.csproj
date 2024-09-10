@@ -1,0 +1,33 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="8.0.4" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="8.0.4" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="8.0.4">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\NuGet Packages Projects\EasyArchitectV2Lab1.ApiControllerBase\EasyArchitectV2Lab1.ApiControllerBase.csproj" />
+    <ProjectReference Include="..\..\NuGet Packages Projects\EasyArchitectV2Lab1.AuthExtensions\EasyArchitectV2Lab1.AuthExtensions.csproj" />
+    <ProjectReference Include="..\..\NuGet Packages Projects\EasyArchitectV2Lab1.Configuration\EasyArchitectV2Lab1.Configuration.csproj" />
+    <ProjectReference Include="..\..\NuGet Packages Projects\EasyArchitectV2Lab1.JWTMiddleware\EasyArchitectV2Lab1.JWTMiddleware.csproj" />
+    <ProjectReference Include="..\Application\Application.csproj" />
+    <ProjectReference Include="..\Infrastructure\Infrastructure.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Update="appsettings.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+</Project>

@@ -1,0 +1,1 @@
+﻿# EasyArchitect V2 API Framework 的 Lab 範本產生器專案
